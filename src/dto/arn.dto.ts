@@ -1,4 +1,4 @@
-import { IsSquareMatrix } from 'src/validation/is-square-matrix';
+import { IsSquareMatrix } from '../validation/is-square-matrix';
 
 export class ArnDTO {
   @IsSquareMatrix()

@@ -33,6 +33,19 @@ class ConfigService {
   }
 
   public getTypeOrmConfig(): TypeOrmModuleOptions {
+    const isTestingEnv = this.getValue('TS_JEST', false);
+
+    if (isTestingEnv)
+      return {
+        port: 5434,
+        password: 'postgres',
+        username: 'postgres',
+        database: 'postgres',
+        host: 'localhost',
+        entities: [Row, Col, Matrix],
+        type: 'postgres',
+      };
+
     return {
       port: parseInt(this.getValue('DATABASE_PORT')),
       password: this.getValue('DATABASE_PASSWORD'),

@@ -3,7 +3,6 @@ import { AppService } from './app.service';
 import { ArnService } from './arn.service';
 import { ArnDTO } from './dto/arn.dto';
 import { Row } from './models/row';
-
 @Controller()
 export class AppController {
   constructor(
