@@ -23,7 +23,7 @@ export class ArnService {
     ]);
 
     return {
-      ratio: mutated / total,
+      ratio: total > 0 ? mutated / total : 0,
       mutated,
       total,
     };
